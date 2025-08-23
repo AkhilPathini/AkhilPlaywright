@@ -1,8 +1,8 @@
-import { test, expect } from '@playwright/test'; 
+import { test, expect } from '@playwright/test';
 // ✅ Import 'test' and 'expect' from Playwright to create and validate automated tests.
 
 test('Addemployee', async ({ page }) => {
-// ✅ Define a test case named 'Addemployee' with an async function using 'page' for browser control.
+    // ✅ Define a test case named 'Addemployee' with an async function using 'page' for browser control.
 
     await page.goto("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
     // 👉 Opens the OrangeHRM login page in the browser.
@@ -26,17 +26,17 @@ test('Addemployee', async ({ page }) => {
     // 👉 Clicks on the "Add Employee" link under the PIM module.
 
     await page.locator("//input[@placeholder='First Name']").fill("Pawan");
-    // 👉 Fills the "First Name" input with "Krishna".
+    // 👉 Fills the "First Name" input with "Pawan".
 
     await page.locator("//input[@placeholder='Last Name']").fill("kalyan");
-    // 👉 Fills the "Last Name" input with "Reddy".
+    // 👉 Fills the "Last Name" input with "kalyan".
 
     await page.locator("(//input[@class='oxd-input oxd-input--active'])[2]").fill("8458");
-    // 👉 Fills the "Employee ID" input with "9458".
+    // 👉 Fills the "Employee ID" input with "8458".
 
     await page.locator("//button[@type='submit']").click();
     // 👉 Clicks the "Save" button to add the employee.
-    
+
 });
 
-    
+

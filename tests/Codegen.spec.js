@@ -1,11 +1,10 @@
 // commands for run the codegen test
 
-//npx playwright codegen --o [file name] .. creates new codegenerate file 
+//npx playwright codegen <URL> --output <filename> creates new codegenerate file 
 //npx playwright codegen --target javascript  .. generate script in required langugae
 //npx playwright codegen --browser chromium    ..record script in provided browser
 //npx playwright codegen --device "iphone13"   ..generate script in supportive devices
 //npx playwright codegen --viewport-size "1280,720"   ..generate script in provides screen size
-
 
 
 
@@ -17,6 +16,9 @@ test('GenerateCode', async ({ page }) => {
 
     await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
     // 👉 Opens the OrangeHRM login page.
+
+    await page.getByRole('textbox', { name: 'Username' }).click();
+    // 👉 Clicks the 'Username' textbox to focus.
 
     await page.getByRole('textbox', { name: 'Username' }).fill('Admin');
     // 👉 Finds the textbox with the accessible name 'Username' and fills it with 'Admin'.
@@ -57,20 +59,3 @@ test('GenerateCode', async ({ page }) => {
 
 
 
-
-// import { test, expect } from '@playwright/test';
-
-// test('GenerateCode', async ({ page }) => {
-//   await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
-//   await page.getByRole('textbox', { name: 'Username' }).fill('Admin');
-//   await page.getByRole('textbox', { name: 'Password' }).click();
-//   await page.getByRole('textbox', { name: 'Password' }).fill('admin123');
-//   await page.getByRole('button', { name: 'Login' }).click();
-//   await page.getByRole('link', { name: 'Admin' }).click();
-//   await page.getByText('Job', { exact: true }).click();
-//   await page.getByRole('menuitem', { name: 'Job Titles' }).click();
-//   await page.getByRole('button', { name: ' Add' }).click();
-//   await page.getByRole('textbox').nth(1).click();
-//   await page.getByRole('textbox').nth(1).fill('CMD');
-//   await page.getByRole('button', { name: 'Save' }).click();
-// });
