@@ -89,11 +89,11 @@ export default defineConfig({
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
     },
-    {
-      // Firefox browser
-      name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
-    },
+    //{
+    //   // Firefox browser
+    //   name: 'firefox',
+    //   use: { ...devices['Desktop Firefox'] },
+    // },
     // {
     //   // Safari browser (WebKit engine)
     //   name: 'webkit',
